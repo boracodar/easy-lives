@@ -7,6 +7,7 @@ gem 'puma'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'bootsnap', require: false
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
