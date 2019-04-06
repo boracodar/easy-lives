@@ -1,24 +1,5 @@
-# README
+# easy-lives
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App criada nas lives do Lucas Caton.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Assista as lives em [youtube.com/lucascaton](https://www.youtube.com/lucascaton?sub_confirmation=1)!
