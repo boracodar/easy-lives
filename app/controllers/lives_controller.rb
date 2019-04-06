@@ -17,11 +17,14 @@ class LivesController < ApplicationController
 
   # GET /lives/1/edit
   def edit
+    if @live.author != current_user
+      redirect_to lives_path, alert: 'Você não tem permissão para editar essa live'
+    end
   end
 
   # POST /lives
   def create
-    @live = Live.new(live_params)
+    @live = Live.new(live_params.merge(author: current_user))
 
     if @live.save
       redirect_to @live, notice: 'Live was successfully created.'
@@ -53,6 +56,6 @@ class LivesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def live_params
-      params.require(:live).permit(:subject, :description, :author_id)
+      params.require(:live).permit(:subject, :description)
     end
 end
