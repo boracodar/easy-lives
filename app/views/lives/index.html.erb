@@ -1,0 +1,28 @@
+<h1>Lives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Assunto</th>
+      <th>Descrição</th>
+      <th>Autor</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lives.each do |live| %>
+      <tr>
+        <td><%= link_to live.subject, link %></td>
+        <td><%= live.description %></td>
+        <td><%= live.author %></td>
+
+        <td><%= link_to 'Edit', edit_live_path(live) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Sugerir live', new_live_path %>

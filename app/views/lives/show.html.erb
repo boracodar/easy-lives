@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @live.subject %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @live.description %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @live.author %>
+</p>
+
+<%= link_to 'Edit', edit_live_path(@live) %> |
+<%= link_to 'Back', lives_path %>
