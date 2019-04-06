@@ -13,7 +13,7 @@
   <tbody>
     <% @lives.each do |live| %>
       <tr>
-        <td><%= link_to live.subject, link %></td>
+        <td><%= link_to live.subject, live %></td>
         <td><%= live.description %></td>
         <td><%= live.author %></td>
 
