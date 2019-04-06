@@ -13,6 +13,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <% if user_signed_in? %>
+      <nav>
+        Logado como <strong><%= current_user.name %></strong>
+        -
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+      </nav>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
