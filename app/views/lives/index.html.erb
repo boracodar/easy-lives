@@ -1,6 +1,6 @@
-<h1>Lives</h1>
+<h3 class='is-size-3'>Lives</h3>
 
-<table>
+<table class='table is-striped'>
   <thead>
     <tr>
       <th>Assunto</th>
@@ -17,9 +17,11 @@
         <td><%= live.description %></td>
         <td><%= live.author.name %></td>
 
-        <% if live.author == current_user %>
-          <td><%= link_to 'Editar', edit_live_path(live) %></td>
-        <% end %>
+        <td>
+          <% if live.author == current_user %>
+            <%= link_to 'Editar', edit_live_path(live), class: 'button is-success is-small' %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +29,4 @@
 
 <br>
 
-<%= link_to 'Sugerir live', new_live_path %>
+<%= link_to 'Sugerir live', new_live_path, class: 'button is-primary' %>

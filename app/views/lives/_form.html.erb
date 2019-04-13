@@ -1,27 +1,23 @@
-<%= form_with(model: live, local: true) do |form| %>
-  <% if live.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(live.errors.count, "error") %> prohibited this live from being saved:</h2>
+<div class="columns">
+  <div class="column is-half">
+    <%= form_with model: live, local: true do |form| %>
+      <div class="field">
+        <%= form.label :subject, 'Assunto', class: 'label' %>
+        <div class="control">
+          <%= form.text_field :subject, class: 'input' %>
+        </div>
+      </div>
 
-      <ul>
-      <% live.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+      <div class="field">
+        <%= form.label :description, 'Descrição', class: 'label' %>
+        <div class="control">
+          <%= form.text_area :description, class: 'textarea' %>
+        </div>
+      </div>
 
-  <div class="field">
-    <%= form.label :subject, 'Assunto' %>
-    <%= form.text_field :subject %>
+      <div class="actions">
+        <%= form.submit 'Salvar', class: 'button is-primary' %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :description, 'Descrição' %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
