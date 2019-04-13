@@ -1,5 +1,5 @@
-# easy-lives
+# Easy Lives
 
-App criada nas lives do Lucas Caton.
+Aplicação criada nas [lives do Lucas Caton](https://www.lucascaton.com.br/lives).
 
-Assista as lives em [youtube.com/lucascaton](https://www.youtube.com/lucascaton?sub_confirmation=1)!
+Assista em: [youtube.com/lucascaton](https://www.youtube.com/lucascaton?sub_confirmation=1)!
