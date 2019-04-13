@@ -1,26 +1,52 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Easy Lives</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <!DOCTYPE html>
+  <html lang='pt'>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Easy Lives</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+      <%= stylesheet_link_tag    'application', media: 'all' %>
+      <%= javascript_include_tag 'application' %>
+    </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <body>
+      <section class="hero is-primary is-medium">
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <%= link_to 'Easy Lives', root_path, class: 'navbar-item' %>
 
-    <% if user_signed_in? %>
-      <nav>
-        Logado como <strong><%= current_user.name %></strong>
-        -
-        <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
-      </nav>
-    <% end %>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
 
-    <%= yield %>
-  </body>
-</html>
+              <% if user_signed_in? %>
+                <div id="navbarMenuHeroA" class="navbar-menu">
+                  <div class="navbar-end">
+                    <div class="navbar-item">
+                      <p>Logado como <strong><%= current_user.name %></strong></p>
+                    </div>
+
+                    <%= link_to 'Sair', destroy_user_session_path,
+                      method: :delete, class: 'navbar-item' %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </nav>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </section>
+    </body>
+  </html>
