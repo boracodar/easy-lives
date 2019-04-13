@@ -21,6 +21,7 @@ class LivesController < ApplicationController
     if @live.save
       redirect_to lives_path, notice: 'Sugestão de Live foi criada com sucesso.'
     else
+      flash.now[:alert] = @live.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -29,6 +30,7 @@ class LivesController < ApplicationController
     if @live.update(live_params)
       redirect_to lives_path, notice: 'Sugestão de Live foi atualizada com sucesso.'
     else
+      flash.now[:alert] = @live.errors.full_messages.to_sentence
       render :edit
     end
   end
