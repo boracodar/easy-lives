@@ -1,24 +1,20 @@
 class LivesController < ApplicationController
-  before_action :set_live, only: [:edit, :update, :destroy]
+  before_action :set_live, only: %i[edit update destroy]
 
-  # GET /lives
   def index
     @lives = Live.all
   end
 
-  # GET /lives/new
   def new
     @live = Live.new
   end
 
-  # GET /lives/1/edit
   def edit
     if @live.author != current_user
       redirect_to lives_path, alert: 'Você não tem permissão para editar essa live'
     end
   end
 
-  # POST /lives
   def create
     @live = Live.new(live_params.merge(author: current_user))
 
@@ -29,7 +25,6 @@ class LivesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lives/1
   def update
     if @live.update(live_params)
       redirect_to lives_path, notice: 'Sugestão de Live foi atualizada com sucesso.'
@@ -39,13 +34,12 @@ class LivesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_live
-      @live = Live.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def live_params
-      params.require(:live).permit(:subject, :description)
-    end
+  def set_live
+    @live = Live.find(params[:id])
+  end
+
+  def live_params
+    params.require(:live).permit(:subject, :description)
+  end
 end
