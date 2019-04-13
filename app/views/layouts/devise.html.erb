@@ -9,46 +9,34 @@
 
       <%= stylesheet_link_tag    'devise', media: 'all' %>
       <%= javascript_include_tag 'devise' %>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     </head>
 
     <body>
-      <section class="hero is-primary is-medium">
-        <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <%= link_to 'Easy Lives', root_path, class: 'navbar-item' %>
-
-                <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-
-              <% if user_signed_in? %>
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                  <div class="navbar-end">
-                    <div class="navbar-item">
-                      <p>Logado como <strong><%= current_user.name %></strong></p>
+      <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-grey">Easy Live</h3>
+                    <p class="subtitle has-text-grey">Coloque suas credenciais para entrar.</p>
+                    <div class="box">
+                      <figure class="avatar">
+                          <img src="https://placehold.it/128x128">
+                      </figure>
+                      <%= yield %>
                     </div>
-
-                    <%= link_to 'Sair', destroy_user_session_path,
-                      method: :delete, class: 'navbar-item' %>
-                  </div>
+                    <p class="has-text-grey">
+                      <%= render partial: "/devise/shared/links" %>
+                    </p>
+                    <%# <p class="has-text-grey">
+                        <a href="../">Sign Up</a> &nbsp;·&nbsp;
+                        <a href="../">Forgot Password</a> &nbsp;·&nbsp;
+                        <a href="../">Need Help?</a>
+                    </p> %>
                 </div>
-              <% end %>
             </div>
-          </nav>
         </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <%= render 'layouts/flash_messages' %>
-
-          <%= yield %>
-        </div>
-      </section>
+    </section>
     </body>
   </html>
