@@ -1,13 +1,9 @@
 class LivesController < ApplicationController
-  before_action :set_live, only: [:show, :edit, :update, :destroy]
+  before_action :set_live, only: [:edit, :update, :destroy]
 
   # GET /lives
   def index
     @lives = Live.all
-  end
-
-  # GET /lives/1
-  def show
   end
 
   # GET /lives/new
@@ -27,7 +23,7 @@ class LivesController < ApplicationController
     @live = Live.new(live_params.merge(author: current_user))
 
     if @live.save
-      redirect_to @live, notice: 'Live was successfully created.'
+      redirect_to lives_path, notice: 'Sugestão de Live foi criada com sucesso.'
     else
       render :new
     end
@@ -36,16 +32,10 @@ class LivesController < ApplicationController
   # PATCH/PUT /lives/1
   def update
     if @live.update(live_params)
-      redirect_to @live, notice: 'Live was successfully updated.'
+      redirect_to lives_path, notice: 'Sugestão de Live foi atualizada com sucesso.'
     else
       render :edit
     end
-  end
-
-  # DELETE /lives/1
-  def destroy
-    @live.destroy
-    redirect_to lives_url, notice: 'Live was successfully destroyed.'
   end
 
   private
