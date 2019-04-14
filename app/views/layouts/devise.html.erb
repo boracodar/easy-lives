@@ -7,8 +7,7 @@
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
 
-      <%= stylesheet_link_tag    'devise', media: 'all' %>
-      <%= javascript_include_tag 'devise' %>
+      <%= stylesheet_link_tag    'authentication', media: 'all' %>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     </head>
@@ -22,12 +21,12 @@
                     <p class="subtitle has-text-grey">Coloque suas credenciais para entrar.</p>
                     <div class="box">
                       <figure class="avatar">
-                          <%= image_tag 'logo-devise' %>
+                          <%= image_tag 'logo' %>
                       </figure>
                       <%= yield %>
                     </div>
                     <p class="has-text-grey">
-                      <%= render partial: "/devise/shared/links" %>
+                      <%= render "/devise/shared/links" %>
                     </p>
                 </div>
             </div>
