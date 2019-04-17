@@ -1,6 +1,6 @@
 <% flash.each do |type, message| %>
-  <div class="notification <%= type == 'notice' ? 'is-success' : 'is-danger' %>">
-    <button class="delete"></button>
+  <div class='notification <%= type == 'notice' ? 'is-success' : 'is-danger' %>'>
+    <button class='delete is-medium'></button>
     <%= message %>
   </div>
 <% end %>
