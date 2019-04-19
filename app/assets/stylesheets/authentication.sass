@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+@import 'bulma/bulma'
+
+html,body
+  font-family: 'Open Sans', serif
+  font-size: 14px
+  font-weight: 300
+
+.hero
+  background: #F2F6FA !important
+
+.hero .nav, .hero.is-success .nav
+  -webkit-box-shadow: none
+  box-shadow: none
+
+.box
+  margin-top: 5rem
+
+.avatar
+  margin-top: -70px
+  padding-bottom: 20px
+
+.avatar img
+  padding: 5px
+  background: #fff
+  border-radius: 50%
+  -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1)
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1)
+
+input
+  font-weight: 300
+
+p
+  font-weight: 700
+
+p.subtitle
+  padding-top: 1rem
+
