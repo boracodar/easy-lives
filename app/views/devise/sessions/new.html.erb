@@ -1,16 +1,17 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-large', placeholder: "Seu E-mail" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-large',
+      placeholder: "Seu email" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "current-password", class: 'input is-large', placeholder: "Sua Senha" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: 'input is-large',
+      placeholder: "Sua Senha" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
-      <%= f.check_box :remember_me %>
+      <%= f.check_box :remember_me, checked: true %>
       <%= f.label :remember_me, 'Lembre-me' %>
     </div>
   <% end %>
@@ -19,4 +20,3 @@
     <%= f.submit "Entrar", class: 'button is-block is-info is-large is-fullwidth' %>
   </div>
 <% end %>
-

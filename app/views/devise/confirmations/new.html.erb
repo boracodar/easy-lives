@@ -2,7 +2,9 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'input is-large', placeholder: "Seu E-mail" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",
+      value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+      class: 'input is-large', placeholder: "Seu email" %>
   </div>
 
   <div class="actions">

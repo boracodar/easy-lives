@@ -3,11 +3,13 @@
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'input is-large', placeholder: "Sua senha (minimo #{@minimum_password_length} caracteres)" %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'input is-large',
+      placeholder: "Sua senha (minimo #{@minimum_password_length} caracteres)" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input is-large', placeholder: "Confirmar Senha"  %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input is-large',
+      placeholder: "Confirmar Senha"  %>
   </div>
 
   <div class="actions">
