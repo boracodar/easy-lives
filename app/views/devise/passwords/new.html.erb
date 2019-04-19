@@ -2,10 +2,12 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-large', placeholder: "Seu E-mail" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input is-large',
+      placeholder: "Seu email" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Envie-me as instruções da senha", class: 'button is-block is-info is-large is-fullwidth' %>
+    <%= f.submit "Envie-me as instruções da senha",
+      class: 'button is-block is-info is-large is-fullwidth' %>
   </div>
 <% end %>

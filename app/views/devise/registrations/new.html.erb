@@ -6,15 +6,18 @@
   </div>
 
   <div class="field">
-    <%= f.email_field :email, autocomplete: "email", class: 'input is-large', placeholder: "Seu E-mail" %>
+    <%= f.email_field :email, autocomplete: "email", class: 'input is-large',
+      placeholder: "Seu email" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "new-password", class: 'input is-large', placeholder: "Sua Senha (minimo #{@minimum_password_length} caracteres)" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: 'input is-large',
+      placeholder: "Sua Senha (minimo #{@minimum_password_length} caracteres)" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input is-large', placeholder: "Confirme sua Senha" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",
+      class: 'input is-large', placeholder: "Confirme sua Senha" %>
   </div>
 
   <div class="actions">
