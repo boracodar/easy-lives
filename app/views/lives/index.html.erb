@@ -3,6 +3,7 @@
 <table class='table is-striped'>
   <thead>
     <tr>
+      <th>Votar</th>
       <th>Assunto</th>
       <th>Descrição</th>
       <th>Autor</th>
@@ -13,6 +14,19 @@
   <tbody>
     <% @lives.each do |live| %>
       <tr>
+        <td>
+          <span class='tag is-info'><%= live.votes_count %></span>
+
+          <% if @voted_lives.include?(live) %>
+            <%= link_to '✓',
+              vote_path(live.votes.where(user: current_user).first),
+              method: :delete, class: 'button is-success is-small' %>
+          <% else %>
+            <%= link_to 'Votar', votes_path(live_id: live.id),
+              method: :post, class: 'button is-small' %>
+          <% end %>
+        </td>
+
         <td><%= live.subject %></td>
         <td><%= live.description %></td>
         <td><%= live.author.name %></td>
