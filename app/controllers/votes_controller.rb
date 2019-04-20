@@ -7,6 +7,13 @@ class VotesController < ApplicationController
     redirect_to lives_path, notice: 'Seu voto foi contabilizado!'
   end
 
+  def destroy
+    vote = Vote.find(params[:id])
+    vote.destroy!
+
+    redirect_to lives_path, notice: 'Seu voto foi cancelado!'
+  end
+
   private
 
   def set_live

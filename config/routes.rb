@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :lives, except: %i[show destroy]
-  resources :votes, only: %i[create] # TODO: implement destroy
+  resources :votes, only: %i[create destroy]
 end

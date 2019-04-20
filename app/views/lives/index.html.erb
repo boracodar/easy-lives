@@ -18,7 +18,9 @@
           <span class='tag is-info'><%= live.votes_count %></span>
 
           <% if @voted_lives.include?(live) %>
-            <span class='tag is-success'>✓</span>
+            <%= link_to '✓',
+              vote_path(live.votes.where(user: current_user).first),
+              method: :delete, class: 'button is-success is-small' %>
           <% else %>
             <%= link_to 'Votar', votes_path(live_id: live.id),
               method: :post, class: 'button is-small' %>
