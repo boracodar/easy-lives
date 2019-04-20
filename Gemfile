@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 ruby '2.6.2'
 
 gem 'rails'
-gem 'pg'
-gem 'puma'
-gem 'sass-rails'
-gem 'uglifier'
+
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'devise-i18n'
+gem 'pg'
+gem 'puma'
+gem 'rails-i18n'
+gem 'sass-rails'
+gem 'uglifier'
 
 group :development, :test do
   gem 'letter_opener'
