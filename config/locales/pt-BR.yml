@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    models:
+      live: 'Live'
+      user: 'Usuário'
+      vote: 'Voto'
+
+    attributes:
+      default: &default
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
+
+      live:
+        <<: *default
+        subject: 'Assunto'
+        description: 'Descrição'
+        author: 'Autor'
+
+  lives:
+    index:
+      vote: 'Votar'
