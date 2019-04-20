@@ -3,6 +3,7 @@ class LivesController < ApplicationController
 
   def index
     @lives = Live.all
+    @voted_lives = current_user.voted_lives
   end
 
   def new
