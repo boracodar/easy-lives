@@ -2,14 +2,14 @@
   <div class="column is-half">
     <%= form_with model: live, local: true do |form| %>
       <div class="field">
-        <%= form.label :subject, 'Assunto', class: 'label' %>
+        <%= form.label :subject, class: 'label' %>
         <div class="control">
           <%= form.text_field :subject, class: 'input' %>
         </div>
       </div>
 
       <div class="field">
-        <%= form.label :description, 'Descrição', class: 'label' %>
+        <%= form.label :description, class: 'label' %>
         <div class="control">
           <%= form.text_area :description, class: 'textarea' %>
         </div>
