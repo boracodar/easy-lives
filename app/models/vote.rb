@@ -1,5 +1,5 @@
 class Vote < ApplicationRecord
-  belongs_to :live
+  belongs_to :live, counter_cache: true
   belongs_to :user
 
   validates :live, uniqueness: {
