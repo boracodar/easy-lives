@@ -1,6 +1,6 @@
 <h3 class='is-size-3'>Lives</h3>
 
-<table class='table is-striped'>
+<table id='lives' class='table is-striped'>
   <thead>
     <tr>
       <th><%= t '.vote' %></th>
@@ -18,12 +18,17 @@
           <span class='tag is-info'><%= live.votes_count %></span>
 
           <% if @voted_lives.include?(live) %>
-            <%= link_to '✓',
-              vote_path(live.votes.where(user: current_user).first),
-              method: :delete, class: 'button is-success is-small' %>
+            <%= link_to vote_path(live.votes.where(user: current_user).first),
+              method: :delete, class: 'tooltip',
+                data: { tooltip: 'Remover voto' } do %>
+                <span class='tag is-success'>✔</span>
+            <% end %>
           <% else %>
-            <%= link_to 'Votar', votes_path(live_id: live.id),
-              method: :post, class: 'button is-small' %>
+            <%= link_to votes_path(live_id: live.id),
+              method: :post, class: 'tooltip',
+              data: { tooltip: 'Votar' } do %>
+                <span class='tag'>✔</span>
+            <% end %>
           <% end %>
         </td>
 
