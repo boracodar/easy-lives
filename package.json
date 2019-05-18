@@ -2,7 +2,8 @@
   "name": "easy-lives",
   "private": true,
   "dependencies": {
-    "bulma": "^0.7.4"
+    "bulma": "^0.7.4",
+    "bulma-tooltip": "^2.0.2"
   },
   "version": "1.0.0",
   "repository": "https://github.com/lucascaton/easy-lives.git"
