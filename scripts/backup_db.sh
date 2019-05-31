@@ -3,8 +3,8 @@
 set -euxo pipefail
 
 # Generates DB dump
-# heroku pg:backups:capture
-# heroku pg:backups:download
+heroku pg:backups:capture
+heroku pg:backups:download
 
 # Clear local DB
 rails db:drop db:create db:migrate
