@@ -4,6 +4,6 @@ class UserDecorator < Draper::Decorator
   def avatar_url
     hash = Digest::MD5.hexdigest(email.downcase)
 
-    "https://www.gravatar.com/avatar/#{hash}?s=30"
+    "https://www.gravatar.com/avatar/#{hash}?s=60"
   end
 end

@@ -6,7 +6,7 @@ RSpec.describe UserDecorator do
 
     it 'returns user avatar URL' do
       expect(user_decorator.avatar_url).
-        to eq("https://www.gravatar.com/avatar/#{hash}?s=30")
+        to eq("https://www.gravatar.com/avatar/#{hash}?s=60")
     end
   end
 end
