@@ -6,6 +6,7 @@ gem 'rails'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n'
+gem 'draper'
 gem 'pg'
 gem 'puma'
 gem 'rails-i18n'
