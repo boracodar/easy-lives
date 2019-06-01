@@ -4,5 +4,24 @@ $primary: #209cee
 @import 'bulma/bulma'
 @import 'bulma-tooltip/dist/css/bulma-tooltip'
 
-#lives thead th:first-child
-  width: 7rem
+#lives
+  thead th
+    &.votes
+      width: 7rem
+
+    &.author
+      width: 15rem
+
+    &.created_at
+      width: 12rem
+
+  img.avatar
+    width: 30px
+    border-radius: 50%
+    vertical-align: middle
+
+  .author-column
+    vertical-align: middle
+
+  .author-name
+    vertical-align: middle

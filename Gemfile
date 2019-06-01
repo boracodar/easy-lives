@@ -6,6 +6,7 @@ gem 'rails'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n'
+gem 'draper'
 gem 'pg'
 gem 'puma'
 gem 'rails-i18n'
@@ -24,8 +25,9 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

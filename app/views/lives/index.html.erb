@@ -1,12 +1,13 @@
-<h3 class='is-size-3'>Lives</h3>
+<h3 class='is-size-3'>Sugestões de Lives</h3>
 
 <table id='lives' class='table is-striped'>
   <thead>
     <tr>
-      <th><%= t '.vote' %></th>
+      <th class='votes'><%= t '.vote' %></th>
       <th><%= t 'activerecord.attributes.live.subject' %></th>
       <th><%= t 'activerecord.attributes.live.description' %></th>
-      <th><%= t 'activerecord.attributes.live.author' %></th>
+      <th class='author'><%= t 'activerecord.attributes.live.author' %></th>
+      <th class='created_at'><%= t 'activerecord.attributes.live.created_at' %></th>
       <th></th>
     </tr>
   </thead>
@@ -34,7 +35,13 @@
 
         <td><%= live.subject %></td>
         <td><%= live.description %></td>
-        <td><%= live.author.name %></td>
+
+        <td class='author-column'>
+          <%= image_tag live.author.decorate.avatar_url, class: 'avatar' %>
+          <span><%= live.author.name %></span>
+        </td>
+
+        <td><%= l live.created_at, format: :short %></td>
 
         <td>
           <% if live.author == current_user %>
