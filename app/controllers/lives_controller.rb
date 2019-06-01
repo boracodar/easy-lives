@@ -2,7 +2,7 @@ class LivesController < ApplicationController
   before_action :set_live, only: %i[edit update destroy]
 
   def index
-    @lives = Live.order(votes_count: :desc)
+    @lives = Live.order(votes_count: :desc, created_at: :desc)
     @voted_lives = current_user.voted_lives
   end
 
