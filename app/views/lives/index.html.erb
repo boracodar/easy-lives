@@ -6,7 +6,7 @@
       <th class='votes'><%= t '.vote' %></th>
       <th><%= t 'activerecord.attributes.live.subject' %></th>
       <th><%= t 'activerecord.attributes.live.description' %></th>
-      <th><%= t 'activerecord.attributes.live.author' %></th>
+      <th class='author'><%= t 'activerecord.attributes.live.author' %></th>
       <th></th>
     </tr>
   </thead>
@@ -34,7 +34,11 @@
 
         <td><%= live.subject %></td>
         <td><%= live.description %></td>
-        <td><%= live.author.name %></td>
+
+        <td>
+          <%= image_tag live.author.decorate.avatar_url %>
+          <%= live.author.name %>
+        </td>
 
         <td>
           <% if live.author == current_user %>
