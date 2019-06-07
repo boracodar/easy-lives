@@ -9,6 +9,7 @@
       <th class='author'><%= t 'activerecord.attributes.live.author' %></th>
       <th class='created_at'><%= t 'activerecord.attributes.live.created_at' %></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -46,6 +47,12 @@
         <td>
           <% if live.author == current_user %>
             <%= link_to 'Editar', edit_live_path(live), class: 'button is-success is-small' %>
+          <% end %>
+        </td>
+
+        <td>
+          <% if live.author == current_user and live.can_be_deleted? %>
+            <%= link_to 'Remover', live_path(live), method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger is-small' %>
           <% end %>
         </td>
       </tr>
