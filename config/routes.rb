@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :lives, except: %i[show destroy]
+  resources :lives, except: %i[show]
   resources :votes, only: %i[create destroy]
 end
