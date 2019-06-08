@@ -12,7 +12,7 @@ jobs:
       - image: circleci/postgres:11
         environment:
           POSTGRES_USER: root
-          POSTGRES_DB: circle-test_test
+          POSTGRES_DB: easy-lives_test
 
     steps:
       - checkout
