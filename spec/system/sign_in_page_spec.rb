@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Sign in page', type: :system do
   context 'when accessing the initial page' do
     before { visit '/' }
