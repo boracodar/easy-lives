@@ -30,8 +30,8 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      - run: bundle exec rspec --format documentation
       - run: bundle exec rubocop
+      - run: bundle exec rspec --format documentation
 
 workflows:
   default:
