@@ -1,0 +1,7 @@
+version: 2.1
+
+workflows:
+  RSpec:
+    jobs: 'bundle exec rspec --format documentation'
+  Rubocop:
+    jobs: 'bundle exec rubocop'
