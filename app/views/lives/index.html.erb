@@ -51,7 +51,7 @@
         </td>
 
         <td>
-          <% if live.author == current_user and live.can_be_deleted? %>
+          <% if live.author == current_user && live.can_be_deleted? %>
             <%= link_to 'Remover', live_path(live), method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger is-small' %>
           <% end %>
         </td>
