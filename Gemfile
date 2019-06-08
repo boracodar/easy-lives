@@ -19,6 +19,8 @@ group :development, :test do
   gem 'letter_opener'
   gem 'pry'
   gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
