@@ -22,6 +22,7 @@ jobs:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
           - v1-dependencies- # Fallback to using the latest cache if no exact match is found
 
+      - run: yarn
       - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
