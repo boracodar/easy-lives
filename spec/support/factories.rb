@@ -10,4 +10,10 @@ FactoryBot.define do
     password_confirmation { 'secret1234' }
     confirmed_at { Time.current }
   end
+
+  factory :live do
+    subject { 'Introduction to Springfield' }
+
+    association :author, factory: :user
+  end
 end
