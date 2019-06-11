@@ -6,17 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: final_newline, final_blank_line
-Layout/TrailingBlankLines:
-  Exclude:
-    - 'app/decorators/user_decorator.rb'
-    - 'spec/decorators/user_decorator_spec.rb'
-    - 'spec/support/factories.rb'
-    - 'spec/support/factory_bot.rb'
-
 # Offense count: 1
 # Configuration parameters: CountComments, ExcludedMethods.
 # ExcludedMethods: refine
