@@ -14,6 +14,7 @@ AllCops:
   Exclude:
     - 'db/schema.rb'
     - 'config/**/*'
+    - 'bin/yarn'
 
 Rails:
   Enabled: true
