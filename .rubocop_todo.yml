@@ -17,14 +17,6 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 16
 
-# Offense count: 2
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
-Rails/HasManyOrHasOneDependent:
-  Exclude:
-    - 'app/models/live.rb'
-    - 'app/models/user.rb'
-
 # Offense count: 1
 # Configuration parameters: Include.
 # Include: app/controllers/**/*.rb
