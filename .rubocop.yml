@@ -13,6 +13,7 @@ AllCops:
 
   Exclude:
     - 'db/schema.rb'
+    - 'config/**/*'
 
 Rails:
   Enabled: true
