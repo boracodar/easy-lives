@@ -33,12 +33,6 @@ Style/ExpandPathArguments:
     - 'spec/rails_helper.rb'
 
 # Offense count: 1
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/controllers/lives_controller.rb'
-
-# Offense count: 1
 # Cop supports --auto-correct.
 Style/IfUnlessModifier:
   Exclude:
