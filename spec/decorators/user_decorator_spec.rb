@@ -7,8 +7,8 @@ RSpec.describe UserDecorator do
     let(:hash) { Digest::MD5.hexdigest(user_decorator.email) }
 
     it 'returns user avatar URL' do
-      expect(user_decorator.avatar_url).
-        to eq("https://www.gravatar.com/avatar/#{hash}?s=60")
+      expect(user_decorator.avatar_url)
+        .to eq("https://www.gravatar.com/avatar/#{hash}?s=60")
     end
   end
 end
