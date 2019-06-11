@@ -5,7 +5,7 @@ class Live < ApplicationRecord
 
   belongs_to :author, class_name: 'User'
 
-  has_many :votes
+  has_many :votes, dependent: :destroy
 
   scope :non_recorded, -> { where(episode: nil) }
   scope :recorded, -> { where.not(episode: nil) }
