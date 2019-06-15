@@ -5,7 +5,11 @@ class LivesController < ApplicationController
   before_action :check_live_ownership, only: %i[edit destroy]
 
   def index
-    @lives = Live.order(votes_count: :desc, created_at: :desc)
+    lives = Live.order(votes_count: :desc, created_at: :desc)
+
+    @suggested_lives = lives.non_recorded
+    @recoreded_lives = lives.recorded.reorder(:episode).decorate
+
     @voted_lives = current_user.voted_lives
   end
 
