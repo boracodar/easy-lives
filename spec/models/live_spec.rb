@@ -5,6 +5,24 @@ RSpec.describe Live do
     let(:live) { create(:live) }
     let(:user) { create(:user) }
 
+    describe 'recorded scope' do
+      let!(:live_1) { create :live, episode: 42 }
+      let!(:live_2) { create :live, episode: nil }
+
+      it 'returns only recorded lives' do
+        expect(described_class.recorded).to eq([live_1])
+      end
+    end
+
+    describe 'non_recorded scope' do
+      let!(:live_1) { create :live, episode: 42 }
+      let!(:live_2) { create :live, episode: nil }
+
+      it 'returns only recorded lives' do
+        expect(described_class.non_recorded).to eq([live_2])
+      end
+    end
+
     it 'returns true for lives with no votes' do
       expect(live.can_be_deleted?).to be true
     end
