@@ -7,6 +7,9 @@ class Live < ApplicationRecord
 
   has_many :votes
 
+  scope :non_recorded, -> { where(episode: nil) }
+  scope :recorded, -> { where.not(episode: nil) }
+
   def can_be_deleted?
     votes_count.zero?
   end

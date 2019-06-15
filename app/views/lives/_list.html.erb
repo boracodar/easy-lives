@@ -1,0 +1,72 @@
+<h3 class='is-size-3'><%= title %> </h3>
+
+<table id='lives' class='table is-striped'>
+  <thead>
+    <tr>
+      <% if local_assigns.fetch(:voted_lives, nil) %>
+        <th class='votes'><%= t '.vote' %></th>
+      <% else %>
+        <th class='episode'><%= t '.episode' %></th>
+      <% end %>
+
+      <th><%= t 'activerecord.attributes.live.subject' %></th>
+      <th><%= t 'activerecord.attributes.live.description' %></th>
+      <th class='author'><%= t 'activerecord.attributes.live.author' %></th>
+      <th class='created_at'><%= t 'activerecord.attributes.live.created_at' %></th>
+
+      <% if local_assigns.fetch(:voted_lives, nil) %>
+        <th class='actions'></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% lives.each do |live| %>
+      <tr>
+        <td>
+          <% if local_assigns.fetch(:voted_lives, nil) %>
+            <span class='tag is-info'><%= live.votes_count %></span>
+
+            <% if voted_lives.include?(live) %>
+              <%= link_to vote_path(live.votes.where(user: current_user).first),
+                method: :delete, class: 'tooltip',
+                  data: { tooltip: 'Remover voto' } do %>
+                  <span class='tag is-success'>✔</span>
+              <% end %>
+            <% else %>
+              <%= link_to votes_path(live_id: live.id),
+                method: :post, class: 'tooltip',
+                data: { tooltip: 'Votar' } do %>
+                  <span class='tag'>✔</span>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= live.formatted_episode %>
+          <% end %>
+        </td>
+
+        <td><%= live.subject %></td>
+        <td><%= live.description %></td>
+
+        <td class='author-column'>
+          <%= image_tag live.author.decorate.avatar_url, class: 'avatar' %>
+          <span><%= live.author.name %></span>
+        </td>
+
+        <td><%= l live.created_at, format: :short %></td>
+
+        <% if local_assigns.fetch(:voted_lives, nil) %>
+          <td>
+            <% if live.author == current_user %>
+              <%= link_to 'Editar', edit_live_path(live), class: 'button is-success is-small' %>
+            <% end %>
+
+            <% if live.author == current_user && live.can_be_deleted? %>
+              <%= link_to 'Remover', live_path(live), method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger is-small' %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

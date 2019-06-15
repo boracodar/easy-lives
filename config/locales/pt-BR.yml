@@ -17,5 +17,6 @@ pt-BR:
         author: 'Autor'
 
   lives:
-    index:
+    list:
       vote: 'Votar'
+      episode: 'Episódio'
