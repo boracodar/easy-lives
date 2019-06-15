@@ -12,13 +12,13 @@ gem 'draper'
 gem 'pg'
 gem 'puma'
 gem 'rails-i18n'
+gem 'rollbar'
 gem 'sass-rails'
 gem 'uglifier'
 
 group :development, :test do
   gem 'letter_opener'
   gem 'pry'
-  gem 'rollbar'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rspec', require: false
