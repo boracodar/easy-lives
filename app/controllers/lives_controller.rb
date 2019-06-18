@@ -64,8 +64,6 @@ class LivesController < ApplicationController
   end
 
   def check_live_ownership
-    if @live.author != current_user
-      redirect_to lives_path, alert: 'Você não tem permissão para editar/remover essa live'
-    end
+    redirect_to lives_path, alert: 'Você não tem permissão para editar/remover essa live' if @live.author != current_user
   end
 end

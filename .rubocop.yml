@@ -13,6 +13,16 @@ AllCops:
 
   Exclude:
     - 'db/schema.rb'
+    - 'config/**/*'
+    - 'bin/yarn'
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
 
 Rails:
   Enabled: true
