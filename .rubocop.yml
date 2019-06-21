@@ -16,6 +16,9 @@ AllCops:
     - 'config/**/*'
     - 'bin/yarn'
 
+Rails:
+  Enabled: true
+
 Metrics/MethodLength:
   Exclude:
     - db/migrate/*
@@ -23,9 +26,6 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
-
-Rails:
-  Enabled: true
 
 Style/Documentation:
   Enabled: false
