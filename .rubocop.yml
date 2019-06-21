@@ -13,8 +13,7 @@ AllCops:
 
   Exclude:
     - 'db/schema.rb'
-    - 'config/**/*'
-    - 'bin/yarn'
+    - 'bin/*'
 
 Rails:
   Enabled: true
@@ -24,8 +23,7 @@ Metrics/MethodLength:
     - db/migrate/*
 
 Metrics/BlockLength:
-  Exclude:
-    - spec/**/*
+  Max: 35
 
 Style/Documentation:
   Enabled: false
