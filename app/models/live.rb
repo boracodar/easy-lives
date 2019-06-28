@@ -7,7 +7,7 @@ class Live < ApplicationRecord
 
   has_many :votes, dependent: :destroy
 
-  scope :non_recorded, -> { where(episode: nil) }
+  scope :suggested, -> { where(episode: nil) }
   scope :recorded, -> { where.not(episode: nil) }
 
   def can_be_deleted?

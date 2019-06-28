@@ -7,7 +7,7 @@ class LivesController < ApplicationController
   def index
     lives = Live.order(votes_count: :desc, created_at: :desc)
 
-    @suggested_lives = lives.non_recorded
+    @suggested_lives = lives.suggested
     @recoreded_lives = lives.recorded.reorder(:episode).decorate
 
     @voted_lives = current_user.voted_lives

@@ -14,12 +14,12 @@ RSpec.describe Live do
       end
     end
 
-    describe 'non_recorded scope' do
+    describe 'suggested scope' do
       let!(:live_1) { create :live, episode: 42 }
       let!(:live_2) { create :live, episode: nil }
 
       it 'returns only recorded lives' do
-        expect(described_class.non_recorded).to eq([live_2])
+        expect(described_class.suggested).to eq([live_2])
       end
     end
 
