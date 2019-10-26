@@ -4,6 +4,6 @@ class LiveDecorator < Draper::Decorator
   delegate_all
 
   def formatted_episode
-    "##{format('%03d', episode)}"
+    "##{format('%<episode>03d', episode: episode)}"
   end
 end
