@@ -1,0 +1,38 @@
+version: '3.6'
+services:
+
+  app:
+    build: .
+    container_name: easy-lives-app
+    command: bin/rails server --port 3000 --binding 0.0.0.0
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+      - gems:/usr/local/bundle
+      - home:/home/app
+    networks:
+      - net
+    depends_on:
+      - db
+    env_file: .env
+    tty: true
+    stdin_open: true
+
+  db:
+    image: postgres:10.5
+    container_name: easy-lives-db
+    volumes:
+      - database:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    networks:
+      - net
+
+volumes:
+  database:
+  gems:
+  home:
+
+networks:
+  net:
