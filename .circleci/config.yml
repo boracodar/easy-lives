@@ -13,6 +13,7 @@ jobs:
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: easy-lives_test
+          POSTGRES_PASSWORD: secret
 
     steps:
       - checkout
